@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <h1 style="font-weight: bold">Обеспечение ОАО Доломит</h1>
+  <div class="btn-login">
+    <button class="glow-on-hover" type="button">Войдите</button>
+  </div>
+  <table class="table-data">
+    <thead>
+      <tr>
+        <th rowspan="2" class="rotate" style="font-weight: bold">Дата</th>
+        <th colspan="4" style="font-weight: bold">ЦС ЦМВ</th>
+        <th colspan="4" style="font-weight: bold">ХП</th>
+        <th colspan="4" style="font-weight: bold">ПВ(инв.)</th>
+      </tr>
+      <tr>
+        <th>Заявлено</th>
+        <th>Принято</th>
+        <th>Погружено</th>
+        <th>+/-<br />Принято</th>
+        <th>Заявлено</th>
+        <th>Принято</th>
+        <th>Погружено</th>
+        <th>+/-<br />Принято</th>
+        <th>Заявлено</th>
+        <th>Принято</th>
+        <th>Погружено</th>
+        <th>+/-<br />Принято</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of records">
+        <td>{{ record.dayOfNowDate }}</td>
+        <td>{{ record.cs_cmv_zayavleno }}</td>
+        <td>{{ record.cs_cmv_prinyato }}</td>
+        <td>{{ record.cs_cmv_pogruzheno }}</td>
+        <td>{{ record.cs_cmv_plus_minus_k_prinyato }}</td>
+        <td>{{ record.hp_zayavleno }}</td>
+        <td>{{ record.hp_prinyato }}</td>
+        <td>{{ record.hp_pogruzheno }}</td>
+        <td>{{ record.hp_plus_minus_k_prinyato }}</td>
+        <td>{{ record.pv_inv_zayavleno }}</td>
+        <td>{{ record.pv_inv_prinyato }}</td>
+        <td>{{ record.pv_inv_pogruzheno }}</td>
+        <td>{{ record.pv_inv_plus_minus_k_prinyato }}</td>
+      </tr>
+
+      <tr>
+        <td style="font-weight: bold">Итого:</td>
+        <td colspan="2"></td>
+        <td>{{ calculateTotal('cs_cmv_pogruzheno') }}</td>
+        <td colspan="3"></td>
+        <td>{{ calculateTotal('hp_pogruzheno') }}</td>
+        <td colspan="3"></td>
+        <td>{{ calculateTotal('pv_inv_pogruzheno') }}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

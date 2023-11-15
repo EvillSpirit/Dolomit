@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="header">
+        <mat-toolbar color="custom-color" class="mat-elevation-z8 custom-color">
+            <a href="">
+                <img routerLink="" src="./assets/logo/logo-white.png" alt="Логотип" />
+            </a>
+            <button mat-flat-button color="custom-button-color" [matMenuTriggerFor]="lvl1electronik" mat-button>Электронные услуги &#9660;</button>
+            <mat-menu #lvl1electronik="matMenu">
+                <button class="custom-menu-item">Поиск вагона</button>
+                <button class="custom-menu-item">Слежение за вагонами</button>
+                <button class="custom-menu-item">Поиск контейнера</button>
+                <button class="custom-menu-item">Слежение за контейнерами</button>
+                <button class="custom-menu-item">Ремонты вагонов</button>
+                <button class="custom-menu-item">Пробеги вагонов</button>
+                <button class="custom-menu-item">Техническое состояние вагона</button>
+                <button class="custom-menu-item">Справочная информация</button>
+                <button class="custom-menu-item">Заявка на выставление ЭСЧФ по билетам</button>
+                <button class="custom-menu-item">Сервис экспедитора</button>
+                <button class="custom-menu-item">ЦЗИ</button>
+                <button class="custom-menu-item">Расчёт тарифа</button>
+            </mat-menu>
+            <button mat-flat-button color="custom-button-color" routerLink="help" mat-button>Помощь</button>
+            <button mat-flat-button color="custom-button-color" routerLink="login" mat-button>Войти</button>
+            <span class="example-spacer"></span>
+            <button routerLink="login" mat-icon-button>
+                <mat-icon>account_circle</mat-icon>
+            </button>
+        </mat-toolbar>
+    </div>
+    
+</div>

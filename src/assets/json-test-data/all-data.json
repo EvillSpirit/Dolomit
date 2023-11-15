@@ -1,0 +1,79 @@
+{
+    "records": [
+      {
+        "dayOfNowDate": 1,
+        "cs_cmv_zayavleno": 10,
+        "cs_cmv_prinyato": 5,
+        "cs_cmv_pogruzheno": 3,
+        "cs_cmv_plus_minus_k_prinyato": 2,
+        "hp_zayavleno": 8,
+        "hp_prinyato": 6,
+        "hp_pogruzheno": 4,
+        "hp_plus_minus_k_prinyato": 2,
+        "pv_inv_zayavleno": 12,
+        "pv_inv_prinyato": 10,
+        "pv_inv_pogruzheno": 8,
+        "pv_inv_plus_minus_k_prinyato": 2
+      },
+      {
+        "dayOfNowDate": 2,
+        "cs_cmv_zayavleno": 15,
+        "cs_cmv_prinyato": 8,
+        "cs_cmv_pogruzheno": 5,
+        "cs_cmv_plus_minus_k_prinyato": 3,
+        "hp_zayavleno": 12,
+        "hp_prinyato": 9,
+        "hp_pogruzheno": 6,
+        "hp_plus_minus_k_prinyato": 3,
+        "pv_inv_zayavleno": 18,
+        "pv_inv_prinyato": 15,
+        "pv_inv_pogruzheno": 12,
+        "pv_inv_plus_minus_k_prinyato": 3
+      },
+      {
+        "dayOfNowDate": 3,
+        "cs_cmv_zayavleno": 8,
+        "cs_cmv_prinyato": 4,
+        "cs_cmv_pogruzheno": 2,
+        "cs_cmv_plus_minus_k_prinyato": 2,
+        "hp_zayavleno": 6,
+        "hp_prinyato": 5,
+        "hp_pogruzheno": 4,
+        "hp_plus_minus_k_prinyato": 1,
+        "pv_inv_zayavleno": 10,
+        "pv_inv_prinyato": 8,
+        "pv_inv_pogruzheno": 6,
+        "pv_inv_plus_minus_k_prinyato": 2
+      },
+      {
+        "dayOfNowDate": 4,
+        "cs_cmv_zayavleno": 12,
+        "cs_cmv_prinyato": 9,
+        "cs_cmv_pogruzheno": 6,
+        "cs_cmv_plus_minus_k_prinyato": 3,
+        "hp_zayavleno": 10,
+        "hp_prinyato": 7,
+        "hp_pogruzheno": 5,
+        "hp_plus_minus_k_prinyato": 2,
+        "pv_inv_zayavleno": 14,
+        "pv_inv_prinyato": 11,
+        "pv_inv_pogruzheno": 9,
+        "pv_inv_plus_minus_k_prinyato": 2
+      },
+      {
+        "dayOfNowDate": 5,
+        "cs_cmv_zayavleno": 14,
+        "cs_cmv_prinyato": 10,
+        "cs_cmv_pogruzheno": 8,
+        "cs_cmv_plus_minus_k_prinyato": 2,
+        "hp_zayavleno": 12,
+        "hp_prinyato": 9,
+        "hp_pogruzheno": 7,
+        "hp_plus_minus_k_prinyato": 2,
+        "pv_inv_zayavleno": 16,
+        "pv_inv_prinyato": 13,
+        "pv_inv_pogruzheno": 10,
+        "pv_inv_plus_minus_k_prinyato": 3
+      }
+    ]
+  }

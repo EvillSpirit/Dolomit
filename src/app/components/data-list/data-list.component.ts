@@ -8,6 +8,7 @@ import { DolomitService } from 'src/app/services/dolomit.service';
 })
 export class DataListComponent {
   records?: any[]
+  isAdmin: boolean = true;
 
   constructor(private dolomitService: DolomitService){
 
@@ -35,4 +36,7 @@ export class DataListComponent {
 
     return total;
   }
+
+  e(){}
+  d(){}
 }

@@ -12,6 +12,7 @@
         <th colspan="4" style="font-weight: bold">ЦС ЦМВ</th>
         <th colspan="4" style="font-weight: bold">ХП</th>
         <th colspan="4" style="font-weight: bold">ПВ(инв.)</th>
+        <th rowspan="2" *ngIf="isAdmin">Действия</th>
       </tr>
       <tr>
         <th>Заявлено</th>
@@ -28,7 +29,7 @@
         <th>+/-<br />Принято</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="body-size">
       <tr *ngFor="let record of records">
         <td>{{ record.dayOfNowDate }}</td>
         <td>{{ record.cs_cmv_zayavleno }}</td>
@@ -43,6 +44,9 @@
         <td>{{ record.pv_inv_prinyato }}</td>
         <td>{{ record.pv_inv_pogruzheno }}</td>
         <td>{{ record.pv_inv_pogruzheno - record.pv_inv_prinyato }}</td>
+        <td *ngIf="isAdmin"><img class="icons-size marg-right" src="assets/icons/edit.png">
+                            <img class="icons-size" src="assets/icons/delete.png">
+        </td>
       </tr>
 
       <tr>
@@ -53,7 +57,7 @@
         <td>{{ calculateTotal('hp_pogruzheno') }}</td>
         <td colspan="3"></td>
         <td>{{ calculateTotal('pv_inv_pogruzheno') }}</td>
-        <td></td>
+        <td colspan="2"></td>
       </tr>
     </tbody>
   </table>

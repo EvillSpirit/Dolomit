@@ -1,0 +1,32 @@
+<div class="wrapper">
+    <h1 style="font-weight: bold">Операторы ОАО Доломит</h1>
+    <button class="custom-button" routerLink="/admin">
+        <img src="assets/icons/add-user.png" alt="Добавить оператора">
+        Добавить оператора
+      </button>
+    <table class="table-data">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Имя пользователя</th>
+                <th>Почта</th>
+                <th>Роль</th>
+                <th>Статус</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody class="body-size">
+            <tr *ngFor="let item of operators">
+                <td>{{ item.id }}</td>
+                <td>{{ item.username }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.role }}</td>
+                <td>{{ item.status }}</td>
+                <td>
+                    <img class="icons-size marg-right" src="assets/icons/edit.png" (click)="editOperator(row)">
+                    <img class="icons-size" src="assets/icons/delete.png">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

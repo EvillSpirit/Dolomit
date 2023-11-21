@@ -21,9 +21,15 @@
             </mat-menu>
             <button mat-flat-button color="custom-button-color" routerLink="help" mat-button>Помощь</button>
             <button mat-flat-button color="custom-button-color" routerLink="login" mat-button>Войти</button>
+            <button routerLink="operators" mat-icon-button class="custom-icon">
+                <img src="./assets/icons/icon-group.png" alt="group_users"/>
+            </button>
+            <button routerLink="admin" mat-icon-button class="custom-icon">
+                <img src="./assets/icons/add-user.png" alt="add_user"/>
+            </button>
             <span class="example-spacer"></span>
-            <button routerLink="login" mat-icon-button>
-                <mat-icon>account_circle</mat-icon>
+            <button routerLink="login" mat-icon-button class="custom-icon">
+                <img src="./assets/icons/account_circle.png" alt="account_circle"/>
             </button>
         </mat-toolbar>
     </div>

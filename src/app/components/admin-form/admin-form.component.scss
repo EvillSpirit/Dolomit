@@ -4,13 +4,14 @@
     padding: 40px;
     background-color: #f2f2f2;
     border-radius: 10px;
-    margin-top: 12%;
+    margin-top: 5%;
+    text-align: left;
   }
   
   h2 {
-    text-align: center;
     color: #000000;
     font-size: 24px;
+    text-align: center;
     margin-bottom: 30px;
   }
   
@@ -26,7 +27,7 @@
   }
   
   input {
-    width: 100%;
+    width: 95%;
     padding: 12px;
     font-size: 16px;
     border: none;
@@ -35,9 +36,9 @@
 
   input::placeholder {
     opacity: 0.4;
-  }  
+  } 
   
-  button.btn-login {
+  button {
     width: 100%;
     padding: 12px;
     margin-top: 10px;
@@ -50,15 +51,15 @@
     transition: background-color 0.3s;
   }
   
-  button.btn-login:hover {
+  button:hover {
     background-color: #135e9a;
   }
   
-  button.btn-login:active {
+  button:active {
     background-color: #0d4574;
   }
   
-  .form-footer {  
+  .form-footer {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
@@ -72,4 +73,22 @@
   
   .form-footer a:hover {
     text-decoration: underline;
+  }
+
+  select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  select option[disabled] {
+    display: none;
+  }
+  
+  select option[selected] {
+    font-weight: bold;
   }

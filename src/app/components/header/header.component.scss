@@ -40,3 +40,8 @@
 .mat-flat-button:hover {
     background-color: #6495ED; /* Твой собственный цвет */
 }
+
+.custom-icon {
+    filter: invert(100%);
+    margin-left: 10px;
+}

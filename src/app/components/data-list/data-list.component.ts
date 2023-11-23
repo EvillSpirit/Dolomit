@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataDolomit } from 'src/app/interfaces/data-dolomit';
 import { DolomitService } from 'src/app/services/dolomit.service';
 
 @Component({
@@ -6,37 +7,39 @@ import { DolomitService } from 'src/app/services/dolomit.service';
   templateUrl: './data-list.component.html',
   styleUrls: ['./data-list.component.scss']
 })
-export class DataListComponent {
-  records?: any[]
+export class DataListComponent implements OnInit {
   isAdmin: boolean = true;
+  dataDolomitList: DataDolomit[] = [];
+  groupedData: any[] = [];
 
-  constructor(private dolomitService: DolomitService){
+  constructor(private dolomitService: DolomitService) {}
 
+  ngOnInit(): void {
+    this.loadData();
   }
 
-  ngOnInit(): void{
-    this.dolomitService.getAllRecords().subscribe(
-      responce => {
-        this.records = responce.records
-      },
-      error => {
-        console.error('Ошибка при получении данных', error)
+  loadData() {
+    this.dolomitService.getAllDataDolomit().subscribe(
+      (data: DataDolomit[]) => {
+        this.dataDolomitList = data;
+        this.groupDataByDate();
       }
-    )
+    );
   }
 
-  calculateTotal(column: string): number {
-    if (!this.records) return 0;
+  groupDataByDate() {
+    const groupedDataMap = new Map<string, DataDolomit[]>();
 
-    let total = 0;
+    for (const data of this.dataDolomitList) {
+      const date = data.dateCreated;
 
-    for (const record of this.records) {
-      total += record[column] || 0;
+      if (groupedDataMap.has(date)) {
+        groupedDataMap.get(date)?.push(data);
+      } else {
+        groupedDataMap.set(date, [data]);
+      }
     }
 
-    return total;
+    this.groupedData = Array.from(groupedDataMap.values());
   }
-
-  e(){}
-  d(){}
 }

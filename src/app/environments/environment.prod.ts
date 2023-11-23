@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiPath: 'http://portal.vtb.rw'
-  };
+    apiUrl: 'http://localhost:8080/'
+};

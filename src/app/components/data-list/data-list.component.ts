@@ -1,42 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DolomitService } from 'src/app/services/dolomit.service';
+import { Records } from '../../interfaces/data-dolomit';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-data-list',
   templateUrl: './data-list.component.html',
   styleUrls: ['./data-list.component.scss']
 })
-export class DataListComponent {
-  records?: any[]
+export class DataListComponent implements OnInit {
+  records: Records[] = [];
   isAdmin: boolean = true;
 
-  constructor(private dolomitService: DolomitService){
+  constructor(private dolomitService: DolomitService, private http: HttpClient) {}
 
-  }
-
-  ngOnInit(): void{
-    this.dolomitService.getAllRecords().subscribe(
-      responce => {
-        this.records = responce.records
+  ngOnInit(): void {
+    this.http.get<any>('assets/json-test-data/all-data.json').subscribe(
+      response => {
+        const recordsMap = new Map<string, Records[]>();
+  
+        for (let key in response) {
+          const date = new Date(key).toLocaleDateString('ru-RU');
+          const records = response[key] as Records[];
+  
+          if (!recordsMap.has(date)) {
+            recordsMap.set(date, records);
+          } else {
+            const existingRecords = recordsMap.get(date) as Records[];
+            recordsMap.set(date, existingRecords.concat(records));
+          }
+        }
+  
+        this.records = Array.from(recordsMap.values()).flat();
       },
       error => {
-        console.error('Ошибка при получении данных', error)
+        console.error('Ошибка при получении данных', error);
       }
-    )
+    );
   }
-
-  calculateTotal(column: string): number {
-    if (!this.records) return 0;
-
-    let total = 0;
-
-    for (const record of this.records) {
-      total += record[column] || 0;
-    }
-
-    return total;
-  }
-
-  e(){}
-  d(){}
 }

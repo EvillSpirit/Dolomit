@@ -1,16 +1,16 @@
 <div mat-dialog-title>
     <h1>Редактирование оператора</h1>
 </div>
-<form [formGroup]="operatorForm">
+<form [formGroup]="operatorForm" (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content class="content">
         <div class="row">
             <mat-form-field appearance="outline">
-                <mat-label>Id</mat-label>
-                <input matInput type="text" placeholder="1" formControlName="id">
+                <mat-label>Имя</mat-label>
+                <input matInput type="text" placeholder="Имя" formControlName="name">
             </mat-form-field>
             <mat-form-field appearance="outline">
-                <mat-label>Имя</mat-label>
-                <input matInput type="email" placeholder="Имя" formControlName="name">
+                <mat-label>Почта</mat-label>
+                <input matInput type="email" placeholder="Почта" formControlName="email">
             </mat-form-field>
         </div>
         <div class="row">
@@ -38,7 +38,7 @@
             </mat-form-field>
         </div>
         <div class="row">
-            <mat-radio-group aria-label="Select an option">
+            <mat-radio-group aria-label="Select an option" formControlName="role">
                 <mat-label>Роль оператора</mat-label>
                 <mat-radio-button value="1">Администратор</mat-radio-button>
                 <mat-radio-button value="2">Оператор</mat-radio-button>
@@ -47,7 +47,7 @@
         <div class="row">
             <mat-form-field appearance="fill">
                 <mat-label>Статус</mat-label>
-                <mat-select>
+                <mat-select formControlName="status">
                     <mat-option *ngFor="let val of status" [value]="val">{{val}}</mat-option>
                 </mat-select>
             </mat-form-field>
@@ -55,6 +55,6 @@
     </div>
     <div mat-dialog-actions class="action">
         <button mat-raised-button>Отмена</button>
-        <button mat-raised-button color="primary">Сохранить</button>
+        <button mat-raised-button color="primary" type="submit">Сохранить</button>
     </div>
 </form>

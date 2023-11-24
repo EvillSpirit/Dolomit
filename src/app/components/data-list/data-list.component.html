@@ -29,21 +29,21 @@
       </tr>
     </thead>
     <tbody>
-      <ng-container *ngFor="let data of records">
+      <ng-container *ngFor="let group of groupedData">
         <tr>
-          <td>{{ data.dateCreated }}</td>
-          <td>{{ data.carriageType.type === 'ЦС ЦМВ' ? data.zayavleno : '' }}</td>
-          <td>{{ data.carriageType.type === 'ЦС ЦМВ' ? data.prinyato : '' }}</td>
-          <td>{{ data.carriageType.type === 'ЦС ЦМВ' ? data.pogruzheno : '' }}</td>
-          <td>{{ data.carriageType.type === 'ЦС ЦМВ' ? data.plusMinusPrinyato : '' }}</td>
-          <td>{{ data.carriageType.type === 'ХП' ? data.zayavleno : '' }}</td>
-          <td>{{ data.carriageType.type === 'ХП' ? data.prinyato : '' }}</td>
-          <td>{{ data.carriageType.type === 'ХП' ? data.pogruzheno : '' }}</td>
-          <td>{{ data.carriageType.type === 'ХП' ? data.plusMinusPrinyato : '' }}</td>
-          <td>{{ data.carriageType.type === 'ПВ(инв.)' ? data.zayavleno : '' }}</td>
-          <td>{{ data.carriageType.type === 'ПВ(инв.)' ? data.prinyato : '' }}</td>
-          <td>{{ data.carriageType.type === 'ПВ(инв.)' ? data.pogruzheno : '' }}</td>
-          <td>{{ data.carriageType.type === 'ПВ(инв.)' ? data.plusMinusPrinyato : '' }}</td>
+          <td>{{ group.date }}</td>
+          <td>{{ group.data[0].carriageType.type === 'ЦС ЦМВ' ? group.data[0].zayavleno : '' }}</td>
+          <td>{{ group.data[0].carriageType.type === 'ЦС ЦМВ' ? group.data[0].prinyato : '' }}</td>
+          <td>{{ group.data[0].carriageType.type === 'ЦС ЦМВ' ? group.data[0].pogruzheno : '' }}</td>
+          <td>{{ group.data[0].carriageType.type === 'ЦС ЦМВ' ? group.data[0].plusMinusPrinyato : '' }}</td>
+          <td>{{ group.data[0].carriageType.type === 'ХП' ? group.data[0].zayavleno : '' }}</td>
+          <td>{{ group.data[0].carriageType.type === 'ХП' ? group.data[0].prinyato : '' }}</td>
+          <td>{{ group.data[0].carriageType.type === 'ХП' ? group.data[0].pogruzheno : '' }}</td>
+          <td>{{ group.data[0].carriageType.type === 'ХП' ? group.data[0].plusMinusPrinyato : '' }}</td>
+          <td>{{ group.data[0].carriageType.type === 'ПВ(инв.)' ? group.data[0].zayavleno : '' }}</td>
+          <td>{{ group.data[0].carriageType.type === 'ПВ(инв.)' ? group.data[0].prinyato : '' }}</td>
+          <td>{{ group.data[0].carriageType.type === 'ПВ(инв.)' ? group.data[0].pogruzheno : '' }}</td>
+          <td>{{ group.data[0].carriageType.type === 'ПВ(инв.)' ? group.data[0].plusMinusPrinyato : '' }}</td>
         </tr>
       </ng-container>
     </tbody>

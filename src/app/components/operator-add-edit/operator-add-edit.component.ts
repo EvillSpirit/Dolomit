@@ -17,11 +17,16 @@ export class OperatorAddEditComponent {
 
   constructor(private _fb: FormBuilder) {
     this.operatorForm = this._fb.group({
-      id: '',
       name: '',
       email: '',
       role: '',
       status: '',
     })
+  }
+
+  onFormSubmit() {
+    if(this.operatorForm.valid) {
+      console.log(this.operatorForm.value)
+    }
   }
 }

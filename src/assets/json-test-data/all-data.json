@@ -1,76 +1,9 @@
-{
-  "records": [
-    {
-      "dayOfNowDate": 1,
-      "cs_cmv_zayavleno": 10,
-      "cs_cmv_prinyato": 5,
-      "cs_cmv_pogruzheno": 3,
-      "hp_zayavleno": 8,
-      "hp_prinyato": 6,
-      "hp_pogruzheno": 4,
-      "pv_inv_zayavleno": 12,
-      "pv_inv_prinyato": 10,
-      "pv_inv_pogruzheno": 8
-    },
-    {
-      "dayOfNowDate": 2,
-      "cs_cmv_zayavleno": 15,
-      "cs_cmv_prinyato": 8,
-      "cs_cmv_pogruzheno": 5,
-      "cs_cmv_plus_minus_k_prinyato": 3,
-      "hp_zayavleno": 12,
-      "hp_prinyato": 9,
-      "hp_pogruzheno": 6,
-      "hp_plus_minus_k_prinyato": 3,
-      "pv_inv_zayavleno": 18,
-      "pv_inv_prinyato": 15,
-      "pv_inv_pogruzheno": 12,
-      "pv_inv_plus_minus_k_prinyato": 3
-    },
-    {
-      "dayOfNowDate": 3,
-      "cs_cmv_zayavleno": 8,
-      "cs_cmv_prinyato": 4,
-      "cs_cmv_pogruzheno": 2,
-      "cs_cmv_plus_minus_k_prinyato": 2,
-      "hp_zayavleno": 6,
-      "hp_prinyato": 5,
-      "hp_pogruzheno": 4,
-      "hp_plus_minus_k_prinyato": 1,
-      "pv_inv_zayavleno": 10,
-      "pv_inv_prinyato": 8,
-      "pv_inv_pogruzheno": 6,
-      "pv_inv_plus_minus_k_prinyato": 2
-    },
-    {
-      "dayOfNowDate": 4,
-      "cs_cmv_zayavleno": 12,
-      "cs_cmv_prinyato": 9,
-      "cs_cmv_pogruzheno": 6,
-      "cs_cmv_plus_minus_k_prinyato": 3,
-      "hp_zayavleno": 10,
-      "hp_prinyato": 7,
-      "hp_pogruzheno": 5,
-      "hp_plus_minus_k_prinyato": 2,
-      "pv_inv_zayavleno": 14,
-      "pv_inv_prinyato": 11,
-      "pv_inv_pogruzheno": 9,
-      "pv_inv_plus_minus_k_prinyato": 2
-    },
-    {
-      "dayOfNowDate": 5,
-      "cs_cmv_zayavleno": 14  ,
-      "cs_cmv_prinyato": 10,
-      "cs_cmv_pogruzheno": 8,
-      "cs_cmv_plus_minus_k_prinyato": 2,
-      "hp_zayavleno": 12,
-      "hp_prinyato": 9,
-      "hp_pogruzheno": 7,
-      "hp_plus_minus_k_prinyato": 2,
-      "pv_inv_zayavleno": 16,
-      "pv_inv_prinyato": 13,
-      "pv_inv_pogruzheno": 10,
-      "pv_inv_plus_minus_k_prinyato": 3
-    }
-  ]
-}
+    {"2023-11-15T21:00:00.000+00:00":
+    [{"id":"51e6b384-8ee4-4de0-a3d3-9daeea959a39","dateCreated":"15-ноября-2023","zayavleno":1,"prinyato":12,"pogruzheno":33,"plusMinusPrinyato":0,"logs":[{}],"carriageType":{"id":1,"type":"ЦС ЦМВ","description":"Цестерны цементовозы"}},
+    {"id":"368979c3-eeb6-4b8c-ab82-e2f612f822dc","dateCreated":"15-ноября-2023","zayavleno":44,"prinyato":12,"pogruzheno":33,"plusMinusPrinyato":0,"logs":[],"carriageType":{"id":2,"type":"ХП","description":"Хапры"}},
+    {"id":"520647e3-69c8-4de2-9071-442d03fcd73c","dateCreated":"15-ноября-2023","zayavleno":65,"prinyato":12,"pogruzheno":33,"plusMinusPrinyato":0,"logs":[],"carriageType":{"id":3,"type":"ПВ(инв.)","description":"Полувагоны"}}],
+
+    "2023-11-09T21:00:00.000+00:00":
+    [{"id":"2d56f96b-54f9-45d8-b01f-02337bd3a9c9","dateCreated":"09-ноября-2023","zayavleno":2,"prinyato":13,"pogruzheno":34,"plusMinusPrinyato":3,"logs":[],"carriageType":{"id":1,"type":"ЦС ЦМВ","description":"Цестерны цементовозы"}},
+    {"id":"9e4244b0-5286-463e-8388-4eaf1fb5d61d","dateCreated":"09-ноября-2023","zayavleno":66,"prinyato":15,"pogruzheno":55,"plusMinusPrinyato":5,"logs":[{}],"carriageType":{"id":3,"type":"ПВ(инв.)","description":"Полувагоны"}},
+    {"id":"9f48e65e-3227-4a68-8b96-8882f20db796","dateCreated":"09-ноября-2023","zayavleno":45,"prinyato":14,"pogruzheno":42,"plusMinusPrinyato":2,"logs":[],"carriageType":{"id":2,"type":"ХП","description":"Хапры"}}]}

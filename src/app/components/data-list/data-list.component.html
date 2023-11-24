@@ -32,11 +32,16 @@
         <ng-container *ngFor="let group of groupedData">
           <tr>
             <td>{{ group[0].dateCreated }}</td>
-            <ng-container *ngFor="let item of group">
-              <td>{{ item.zayavleno }}</td>
-              <td>{{ item.prinyato }}</td>
-              <td>{{ item.pogruzheno }}</td>
-              <td>{{ item.plusMinusPrinyato }}</td>
+            <ng-container *ngFor="let carriageType of ['Цс Цмв', 'ХП', 'Пв(инв.)']">
+              <ng-container *ngFor="let item of group">
+                <ng-container *ngIf="item.carriageType.type === carriageType">
+                  <td>{{ item.zayavleno }}</td>
+                  <td>{{ item.prinyato }}</td>
+                  <td>{{ item.pogruzheno }}</td>
+                  <!-- <td>{{ item.plusMinusPrinyato}}</td> -->
+                  <td>{{ item.carriageType.type }}</td>
+                </ng-container>
+              </ng-container>
             </ng-container>
           </tr>
         </ng-container>

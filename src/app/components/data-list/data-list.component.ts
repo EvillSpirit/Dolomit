@@ -10,7 +10,8 @@ import { DolomitService } from 'src/app/services/dolomit.service';
 export class DataListComponent implements OnInit {
   isAdmin: boolean = true;
   dataDolomitList: DataDolomit[] = [];
-  groupedData: any[] = [];
+  groupedData: DataDolomit[][] = [];
+  //groupedData: any[] = [];
 
   constructor(private dolomitService: DolomitService) {}
 
@@ -42,4 +43,5 @@ export class DataListComponent implements OnInit {
 
     this.groupedData = Array.from(groupedDataMap.values());
   }
+
 }

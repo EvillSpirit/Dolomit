@@ -1,11 +1,10 @@
-export interface Records {
+export interface DataDolomit {
   id: string;
   dateCreated: string;
   zayavleno: number;
   prinyato: number;
   pogruzheno: number;
   plusMinusPrinyato: number;
-  logs: object[];
   carriageType: {
     id: number;
     type: string;

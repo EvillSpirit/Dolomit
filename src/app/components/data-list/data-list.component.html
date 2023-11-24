@@ -5,47 +5,46 @@
     <a routerLink="login" class="button-login">Войти</a>
   </div>
 
-  <table class="table-data">
-    <thead>
-      <tr>
-        <th rowspan="2">Дата</th>
-        <th colspan="4">ЦС ЦМВ</th>
-        <th colspan="4">ХП</th>
-        <th colspan="4">ПВ(инв.)</th>
-      </tr>
-      <tr>
-        <th>Заявлено</th>
-        <th>Принято</th>
-        <th>Погружено</th>
-        <th>+/- Принято</th>
-        <th>Заявлено</th>
-        <th>Принято</th>
-        <th>Погружено</th>
-        <th>+/- Принято</th>
-        <th>Заявлено</th>
-        <th>Принято</th>
-        <th>Погружено</th>
-        <th>+/- Принято</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let group of groupedData">
+    <table class="table-data">
+      <thead>
         <tr>
-          <td>{{ group.date }}</td>
-          <td>{{ group.data[0].carriageType.type === 'ЦС ЦМВ' ? group.data[0].zayavleno : '' }}</td>
-          <td>{{ group.data[0].carriageType.type === 'ЦС ЦМВ' ? group.data[0].prinyato : '' }}</td>
-          <td>{{ group.data[0].carriageType.type === 'ЦС ЦМВ' ? group.data[0].pogruzheno : '' }}</td>
-          <td>{{ group.data[0].carriageType.type === 'ЦС ЦМВ' ? group.data[0].plusMinusPrinyato : '' }}</td>
-          <td>{{ group.data[0].carriageType.type === 'ХП' ? group.data[0].zayavleno : '' }}</td>
-          <td>{{ group.data[0].carriageType.type === 'ХП' ? group.data[0].prinyato : '' }}</td>
-          <td>{{ group.data[0].carriageType.type === 'ХП' ? group.data[0].pogruzheno : '' }}</td>
-          <td>{{ group.data[0].carriageType.type === 'ХП' ? group.data[0].plusMinusPrinyato : '' }}</td>
-          <td>{{ group.data[0].carriageType.type === 'ПВ(инв.)' ? group.data[0].zayavleno : '' }}</td>
-          <td>{{ group.data[0].carriageType.type === 'ПВ(инв.)' ? group.data[0].prinyato : '' }}</td>
-          <td>{{ group.data[0].carriageType.type === 'ПВ(инв.)' ? group.data[0].pogruzheno : '' }}</td>
-          <td>{{ group.data[0].carriageType.type === 'ПВ(инв.)' ? group.data[0].plusMinusPrinyato : '' }}</td>
+          <th rowspan="2" class="rotate" style="font-weight: bold">Дата</th>
+          <th colspan="4" style="font-weight: bold">Цс Цмв</th>
+          <th colspan="4" style="font-weight: bold">ХП</th>
+          <th colspan="4" style="font-weight: bold">ПВ(инв.)</th>
         </tr>
-      </ng-container>
-    </tbody>
-  </table>
-</div>
+        <tr>
+          <th>Заявлено</th>
+          <th>Принято</th>
+          <th>Погружено</th>
+          <th>+/-<br />Принято</th>
+          <th>Заявлено</th>
+          <th>Принято</th>
+          <th>Погружено</th>
+          <th>+/-<br />Принято</th>
+          <th>Заявлено</th>
+          <th>Принято</th>
+          <th>Погружено</th>
+          <th>+/-<br />Принято</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let group of groupedData">
+          <tr>
+            <td>{{ group[0].dateCreated }}</td>
+            <ng-container *ngFor="let carriageType of ['Цс Цмв', 'ХП', 'Пв(инв.)']">
+              <ng-container *ngFor="let item of group">
+                <ng-container *ngIf="item.carriageType.type === carriageType">
+                  <td>{{ item.zayavleno }}</td>
+                  <td>{{ item.prinyato }}</td>
+                  <td>{{ item.pogruzheno }}</td>
+                  <!-- <td>{{ item.plusMinusPrinyato}}</td> -->
+                  <td>{{ item.carriageType.type }}</td>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>

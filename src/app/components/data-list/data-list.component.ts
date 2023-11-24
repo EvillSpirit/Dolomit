@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataDolomit } from 'src/app/interfaces/data-dolomit';
 import { DolomitService } from 'src/app/services/dolomit.service';
 import { Records } from '../../interfaces/data-dolomit';
 import { HttpClient } from '@angular/common/http';
@@ -9,47 +10,40 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./data-list.component.scss']
 })
 export class DataListComponent implements OnInit {
-  records: Records[] = [];
-  groupedData: any[] = [];
+  isAdmin: boolean = true;
+  dataDolomitList: DataDolomit[] = [];
+  groupedData: DataDolomit[][] = [];
+  //groupedData: any[] = [];
 
-  constructor(private dolomitService: DolomitService, private http: HttpClient) {}
+  constructor(private dolomitService: DolomitService) {}
 
   ngOnInit(): void {
-    this.dolomitService.getAllRecords().subscribe(
-      response => {
-        const recordsMap = new Map<string, Records[]>();
+    this.loadData();
+  }
 
-        for (let key in response) {
-          const date = new Date(key).toLocaleDateString('ru-RU');
-          const records = response[key] as Records[];
-
-          if (!recordsMap.has(date)) {
-            recordsMap.set(date, records);
-          } else {
-            const existingRecords = recordsMap.get(date) as Records[];
-            recordsMap.set(date, existingRecords.concat(records));
-          }
-        }
-
-        this.records = Array.from(recordsMap.values()).flat();
-        this.groupedData = this.groupRecordsByDate(this.records); // Группируем записи по дате
-      },
-      error => {
-        console.error('Ошибка при получении данных', error);
+  loadData() {
+    this.dolomitService.getAllDataDolomit().subscribe(
+      (data: DataDolomit[]) => {
+        this.dataDolomitList = data;
+        this.groupDataByDate();
       }
     );
   }
 
-  private groupRecordsByDate(records: Records[]): any[] {
-    const groupedData: any[] = [];
-    records.forEach(record => {
-      const existingGroup = groupedData.find(group => group.date === record.dateCreated);
-      if (existingGroup) {
-        existingGroup.data.push(record);
+  groupDataByDate() {
+    const groupedDataMap = new Map<string, DataDolomit[]>();
+
+    for (const data of this.dataDolomitList) {
+      const date = data.dateCreated;
+
+      if (groupedDataMap.has(date)) {
+        groupedDataMap.get(date)?.push(data);
       } else {
-        groupedData.push({ date: record.dateCreated, data: [record] });
+        groupedDataMap.set(date, [data]);
       }
-    });
-    return groupedData;
+    }
+
+    this.groupedData = Array.from(groupedDataMap.values());
   }
+
 }

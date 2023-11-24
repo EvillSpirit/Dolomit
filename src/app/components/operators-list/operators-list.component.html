@@ -1,9 +1,12 @@
 <div class="wrapper">
     <h1 style="font-weight: bold">Операторы ОАО Доломит</h1>
     <button class="custom-button" routerLink="/admin">
-        <img src="assets/icons/add-user.png" alt="Добавить оператора">
+        <img src="assets/icons/add-user.png">
         Добавить оператора
-      </button>
+    </button>
+    <button mat-raised-button (click)="openOperatorAddEditComponent()">
+        Добавить оператора new
+    </button>
     <table class="table-data">
         <thead>
             <tr>
@@ -12,6 +15,7 @@
                 <th>Почта</th>
                 <th>Роль</th>
                 <th>Статус</th>
+                
                 <th>Действия</th>
             </tr>
         </thead>
@@ -23,7 +27,7 @@
                 <td>{{ item.role }}</td>
                 <td>{{ item.status }}</td>
                 <td>
-                    <img class="icons-size marg-right" src="assets/icons/edit.png" (click)="editOperator(row)">
+                    <img class="icons-size marg-right" src="assets/icons/edit.png" (click)="openOperatorAddEditComponent()">
                     <img class="icons-size" src="assets/icons/delete.png">
                 </td>
             </tr>

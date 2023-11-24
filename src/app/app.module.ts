@@ -11,6 +11,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 import { DataListComponent } from './components/data-list/data-list.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { IonicModule } from '@ionic/angular';
@@ -18,6 +25,7 @@ import { AdminFormComponent } from './components/admin-form/admin-form.component
 import { ReactiveFormsModule } from '@angular/forms';
 import { OperatorsListComponent } from './components/operators-list/operators-list.component';
 import { ToastrModule } from 'ngx-toastr';
+import { OperatorAddEditComponent } from './components/operator-add-edit/operator-add-edit.component';
 
 
 @NgModule({
@@ -29,6 +37,7 @@ import { ToastrModule } from 'ngx-toastr';
     LoginFormComponent,
     AdminFormComponent,
     OperatorsListComponent,
+    OperatorAddEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +48,13 @@ import { ToastrModule } from 'ngx-toastr';
     MatIconModule,
     MatButtonModule,
     MatTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule,
+    MatSelectModule,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,

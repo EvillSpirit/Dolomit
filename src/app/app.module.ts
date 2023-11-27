@@ -47,7 +47,6 @@ import { OperatorAddEditComponent } from './components/operator-add-edit/operato
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    
     MatTableModule,
     MatDialogModule,
     MatFormFieldModule,
@@ -59,6 +58,7 @@ import { OperatorAddEditComponent } from './components/operator-add-edit/operato
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     ToastrModule.forRoot(),
     IonicModule.forRoot()
   ],

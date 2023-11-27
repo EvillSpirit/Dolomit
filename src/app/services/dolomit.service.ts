@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { environment } from '../environments/environment.prod';
 import { DataDolomit } from '../interfaces/data-dolomit';
-import { CarriageType } from '../interfaces/carriage-type';
 
 @Injectable({
   providedIn: 'root'

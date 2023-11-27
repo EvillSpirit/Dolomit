@@ -13,17 +13,9 @@ export class OperatorsListComponent implements OnInit {
   operators: any[] = [];
   row: any;
 
-  constructor(private operatorsService: OperatorsService, private router: Router, private dialog: MatDialog) { }
-
-  ngOnInit() {
-    this.operatorsService.getOperatorsData().subscribe(data => {
-      this.operators = data;
-    });
-  }
-
-  editOperator(row: any) {
-    this.operatorsService.setSelectedOperator(row);
-    this.router.navigate(['/admin']);
+  constructor(private operatorsService: OperatorsService, private router: Router, private dialog: MatDialog, private _operatorService: OperatorsService) { }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
   openOperatorAddEditComponent() {

@@ -23,6 +23,9 @@ export class AdminFormComponent implements OnInit {
       status: ['', Validators.required]
     });
   }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   onSubmit() {
     if (this.adminForm.valid) {
@@ -50,13 +53,5 @@ export class AdminFormComponent implements OnInit {
     console.log("Отменено");
     this.adminForm.reset();
     this.router.navigateByUrl('/operators');
-  }
-
-  
-  ngOnInit() {
-    const selectedOperator = this.operatorsService.getSelectedOperator();
-    if (selectedOperator) {
-      this.adminForm.patchValue(selectedOperator);
-    }
   }
 }

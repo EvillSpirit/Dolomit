@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataDolomit } from 'src/app/interfaces/data-dolomit';
 import { DolomitService } from 'src/app/services/dolomit.service';
-import { Records } from '../../interfaces/data-dolomit';
 import { HttpClient } from '@angular/common/http';
 
 @Component({

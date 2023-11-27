@@ -1,27 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OperatorsService {
-  
-  private selectedOperator: any = null;
 
-  setSelectedOperator(operator: any) {
-    this.selectedOperator = operator;
-  }
+  constructor(private _http: HttpClient) {}
 
-  getSelectedOperator() {
-    return this.selectedOperator;
-  }
+    addOperator(data: any): Observable<any> {
+      return this._http.post('http://localhost:3000/operators', data);
+    } 
 
-  getData(): any[] {
-    throw new Error('Method not implemented.');
-  }
-  constructor(private http: HttpClient) { }
-
-  getOperatorsData() {
-    return this.http.get<any[]>('assets/json-test-data/adminData.json');
-  }
+    getOperator(): Observable<any> {
+      return this._http.get('http://localhost:3000/operators');
+    } 
 }

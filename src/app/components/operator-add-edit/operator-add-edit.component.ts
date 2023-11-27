@@ -1,5 +1,7 @@
+import { DialogRef } from '@angular/cdk/dialog';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { OperatorsService } from 'src/app/services/operators.service';
 
 @Component({
   selector: 'app-operator-add-edit',
@@ -15,7 +17,12 @@ export class OperatorAddEditComponent {
     'Смена пароля'
   ];
 
-  constructor(private _fb: FormBuilder) {
+  role: string[] = [
+    'Администратор',
+    'Оператор'
+  ];
+
+  constructor(private _fb: FormBuilder, private _operatorService: OperatorsService, private _dialogRef: DialogRef<OperatorAddEditComponent>) {
     this.operatorForm = this._fb.group({
       name: '',
       email: '',
@@ -26,7 +33,15 @@ export class OperatorAddEditComponent {
 
   onFormSubmit() {
     if(this.operatorForm.valid) {
-      console.log(this.operatorForm.value)
+      this._operatorService.addOperator(this.operatorForm.value).subscribe({
+        next: (val: any) => {
+          alert('Оператор успешно добавлен!');
+          this._dialogRef.close();
+        },
+        error: (err: any) => {
+          console.error(err);
+        }
+      })
     }
   }
 }

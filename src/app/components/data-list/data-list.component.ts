@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataDolomit } from 'src/app/interfaces/data-dolomit';
 import { DolomitService } from 'src/app/services/dolomit.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-data-list',
@@ -11,8 +10,8 @@ import { HttpClient } from '@angular/common/http';
 export class DataListComponent implements OnInit {
   isAdmin: boolean = true;
   dataDolomitList: DataDolomit[] = [];
-  groupedData: DataDolomit[][] = [];
-  //groupedData: any[] = [];
+  groupedData: { date: string, carriages: DataDolomit[] }[] = [];
+  carriageTypes: { id: number, type: string, description: string }[] = [];
 
   constructor(private dolomitService: DolomitService) {}
 
@@ -25,6 +24,7 @@ export class DataListComponent implements OnInit {
       (data: DataDolomit[]) => {
         this.dataDolomitList = data;
         this.groupDataByDate();
+        this.extractCarriageTypes();
       }
     );
   }
@@ -42,7 +42,21 @@ export class DataListComponent implements OnInit {
       }
     }
 
-    this.groupedData = Array.from(groupedDataMap.values());
+    this.groupedData = Array.from(groupedDataMap.entries()).map(([date, carriages]) => ({ date, carriages }));
+  }
+
+  extractCarriageTypes() {
+    const types: { id: number, type: string, description: string }[] = [];
+
+    for (const data of this.dataDolomitList) {
+      const carriageType = data.carriageType;
+
+      if (!types.find(type => type.id === carriageType.id)) {
+        types.push(carriageType);
+      }
+    }
+
+    this.carriageTypes = types;
   }
 
 }

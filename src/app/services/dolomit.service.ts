@@ -15,7 +15,7 @@ export class DolomitService {
 
 
   getAllDataDolomit(): Observable<DataDolomit[]> {
-    return this.http.get<any>(this.apiUrl + 'dolomit/data/getAll').pipe(
+    return this.http.get<any>(this.apiUrl + 'dolomit/data/getAllLastMonth').pipe(
       map(response => {
         const dolomitData: DataDolomit[] = [];
         for (const date in response) {
@@ -27,6 +27,10 @@ export class DolomitService {
         return dolomitData;
       })
     );
+  }
+
+  updateDataDolomit(data: DataDolomit): Observable<DataDolomit> {
+    return this.http.patch<DataDolomit>(this.apiUrl + 'dolomit/data/getAllLastMonth', data)
   }
 
 }

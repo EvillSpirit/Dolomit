@@ -26,6 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OperatorsListComponent } from './components/operators-list/operators-list.component';
 import { ToastrModule } from 'ngx-toastr';
 import { OperatorAddEditComponent } from './components/operator-add-edit/operator-add-edit.component';
+import { DataListUpdateComponent } from './components/data-list-update/data-list-update.component';
+
 
 
 @NgModule({
@@ -38,11 +40,13 @@ import { OperatorAddEditComponent } from './components/operator-add-edit/operato
     AdminFormComponent,
     OperatorsListComponent,
     OperatorAddEditComponent,
+    DataListUpdateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,

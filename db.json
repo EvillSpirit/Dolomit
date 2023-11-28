@@ -8,11 +8,11 @@
       "status": "Неактивный"
     },
     {
-      "id": 4,
-      "name": "Артур",
-      "email": "kutas@cab.bts",
+      "id": 3,
+      "name": "asdasd",
+      "email": "dasd@ads",
       "role": "Администратор",
-      "status": "Неактивный"
+      "status": "Активный"
     }
   ]
 }

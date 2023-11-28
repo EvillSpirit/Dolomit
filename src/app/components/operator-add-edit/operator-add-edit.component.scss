@@ -5,6 +5,8 @@
 .row {
     display: flex;
     gap: 10px;
+    width: 450px;
+    padding-bottom: 20px;
 
     mat-form-field {
         width: 100%;

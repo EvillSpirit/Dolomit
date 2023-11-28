@@ -1,25 +1,18 @@
 {
   "operators": [
     {
-      "name": "Сергей",
-      "email": "serg@gmail.com",
-      "role": "Администратор",
-      "status": "Активный",
-      "id": 1
-    },
-    {
+      "id": 2,
       "name": "Артур",
       "email": "kutas@cab.bts",
       "role": "Администратор",
-      "status": "Неактивный",
-      "id": 2
+      "status": "Неактивный"
     },
     {
-      "name": "fsdf",
-      "email": "asdfsdfsdf@fad",
+      "id": 3,
+      "name": "asdasd",
+      "email": "dasd@ads",
       "role": "Администратор",
-      "status": "Активный",
-      "id": 3
+      "status": "Активный"
     }
   ]
 }

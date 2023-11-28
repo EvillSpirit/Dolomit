@@ -1,11 +1,8 @@
 <div class="wrapper">
     <h1 style="font-weight: bold">Операторы ОАО Доломит</h1>
-    <button class="custom-button" routerLink="/admin">
+    <button class="custom-button" (click)="openOperatorAddEditComponent()">
         <img src="assets/icons/add-user.png">
         Добавить оператора
-    </button>
-    <button mat-raised-button (click)="openOperatorAddEditComponent()">
-        Добавить оператора new
     </button>
     <table class="table-data">
         <thead>
@@ -15,22 +12,21 @@
                 <th>Почта</th>
                 <th>Роль</th>
                 <th>Статус</th>
-                
                 <th>Действия</th>
             </tr>
         </thead>
         <tbody class="body-size">
             <tr *ngFor="let item of operators">
                 <td>{{ item.id }}</td>
-                <td>{{ item.username }}</td>
+                <td>{{ item.name }}</td>
                 <td>{{ item.email }}</td>
                 <td>{{ item.role }}</td>
                 <td>{{ item.status }}</td>
                 <td>
-                    <img class="icons-size marg-right" src="assets/icons/edit.png" (click)="openOperatorAddEditComponent()">
-                    <img class="icons-size" src="assets/icons/delete.png">
+                    <img class="icons-size marg-right" src="assets/icons/edit.png" (click)="openOperatorAddEditComponent(item)">
+                    <img class="icons-size" src="assets/icons/delete.png" (click)="deleteOperator(item.id)">
                 </td>
-            </tr>
+              </tr>
         </tbody>
     </table>
 </div>

@@ -12,6 +12,7 @@ export class DataListComponent implements OnInit {
   dataDolomitList: DataDolomit[] = [];
   groupedData: { date: string, carriages: DataDolomit[] }[] = [];
   carriageTypes: { id: number, type: string, description: string }[] = [];
+  carriageTypeOrder = ['ЦС ЦМВ', 'ХП', 'ПВ(инв.)'];
 
   constructor(private dolomitService: DolomitService) {}
 

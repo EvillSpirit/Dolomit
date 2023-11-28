@@ -9,8 +9,8 @@
     <thead>
       <tr>
         <th rowspan="2" class="rotate" style="font-weight: bold">Дата</th>
-        <ng-container *ngFor="let carriageType of carriageTypes">
-          <th colspan="4">{{ carriageType.type }}</th>
+        <ng-container *ngFor="let carriageType of carriageTypeOrder">
+          <th colspan="4">{{ carriageType }}</th>
         </ng-container>
         <th *ngIf="isAdmin" rowspan="2" style="font-weight: bold">Действие</th>
       </tr>
@@ -27,9 +27,9 @@
       <ng-container *ngFor="let group of groupedData">
         <tr>
           <td>{{ group.date }}</td>
-          <ng-container *ngFor="let carriageType of carriageTypes">
+          <ng-container *ngFor="let carriageType of carriageTypeOrder">
             <ng-container *ngFor="let item of group.carriages">
-              <ng-container *ngIf="item.carriageType.type === carriageType.type">
+              <ng-container *ngIf="item.carriageType.type === carriageType">
                 <td>{{ item.zayavleno }}</td>
                 <td>{{ item.prinyato }}</td>
                 <td>{{ item.pogruzheno }}</td>

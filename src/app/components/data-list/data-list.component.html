@@ -8,14 +8,14 @@
   <table class="table-data">
     <thead>
       <tr>
-        <th rowspan="2" class="rotate" style="font-weight: bold">Дата</th>
+        <th rowspan="2"  style="font-weight: bold">Дата</th>
         <ng-container *ngFor="let carriageType of carriageTypeOrder">
           <th colspan="4">{{ carriageType }}</th>
         </ng-container>
         <th *ngIf="isAdmin" rowspan="2" style="font-weight: bold">Действие</th>
       </tr>
       <tr>
-        <ng-container *ngFor="let carriageType of carriageTypes">
+        <ng-container *ngFor="let carriageType of carriageTypeOrder">
           <th>Заявлено</th>
           <th>Принято</th>
           <th>Погружено</th>

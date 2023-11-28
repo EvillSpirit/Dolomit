@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { DataDolomit } from 'src/app/interfaces/data-dolomit';
 import { DolomitService } from 'src/app/services/dolomit.service';
+import { DataListUpdateComponent } from '../data-list-update/data-list-update.component';
 
 @Component({
   selector: 'app-data-list',
@@ -14,7 +16,7 @@ export class DataListComponent implements OnInit {
   carriageTypes: { id: number, type: string, description: string }[] = [];
   carriageTypeOrder = ['ЦС ЦМВ', 'ХП', 'ПВ(инв.)'];
 
-  constructor(private dolomitService: DolomitService) {}
+  constructor(private dolomitService: DolomitService, private _dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadData();
@@ -60,4 +62,15 @@ export class DataListComponent implements OnInit {
     this.carriageTypes = types;
   }
 
+  openDataListUpdateComponent(operator?: DataDolomit) {
+    const dialogRef = this._dialog.open(DataListUpdateComponent, {
+      data: operator || null
+    });
+
+    dialogRef.afterClosed().subscribe((result: string) => {
+      if (result === 'success') {
+        this.loadData();
+      }
+    });
+  }
 }

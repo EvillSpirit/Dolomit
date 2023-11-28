@@ -1,0 +1,45 @@
+.text-center {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+
+.width {
+    width: 80%;
+}
+
+.content {
+    padding-top: 10px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
+
+    mat-form-field {
+        width: 100%;
+    }
+}
+
+.action {
+    padding: 0px 25px 20px;
+    button {
+        flex: 1;
+    }
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px; /* можно изменить значение, чтобы получить нужный отступ */
+  }
+  
+  .input-container mat-form-field {
+    flex: 1;
+    margin-right: 16px; /* можно изменить значение, чтобы получить нужный отступ между инпутами */
+  }
+  
+  .input-container mat-form-field:last-child {
+    margin-right: 0;
+  }

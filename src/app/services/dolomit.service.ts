@@ -14,19 +14,8 @@ export class DolomitService {
   constructor(private http: HttpClient) { }
 
 
-  getAllDataDolomit(): Observable<DataDolomit[]> {
-    return this.http.get<any>(this.apiUrl + 'dolomit/data/getAllLastMonth').pipe(
-      map(response => {
-        const dolomitData: DataDolomit[] = [];
-        for (const date in response) {
-          if (response.hasOwnProperty(date)) {
-            const carriages: DataDolomit[] = response[date];
-            dolomitData.push(...carriages);
-          }
-        }
-        return dolomitData;
-      })
-    );
+  getAllDataDolomit(): Observable<any> {
+    return this.http.get('http://localhost:3000/dolomit');
   }
 
   updateDataDolomit(data: DataDolomit): Observable<DataDolomit> {

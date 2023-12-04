@@ -62,9 +62,9 @@ export class DataListComponent implements OnInit {
     this.carriageTypes = types;
   }
 
-  openDataListUpdateComponent(operator?: DataDolomit) {
+  openDataListUpdateComponent(data?: { date: string, carriages: DataDolomit[] }) {
     const dialogRef = this._dialog.open(DataListUpdateComponent, {
-      data: operator || null
+      data: data || null
     });
 
     dialogRef.afterClosed().subscribe((result: string) => {

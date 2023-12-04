@@ -16,95 +16,89 @@
     }
   ],
   "dolomit": [
-    {
-      "28-11-2023": [
-          {
-              "id": "97831d9c-266a-4a47-a5c0-9eaec12d8fbc",
-              "dateCreated": "27-ноября-2023",
-              "zayavleno": 2,
-              "prinyato": 22,
-              "pogruzheno": 222,
-              "plusMinusPrinyato": 0,
-              "logs": [],
-              "carriageType": {
-                  "id": 3,
-                  "type": "ПВ(инв.)",
-                  "description": "Полувагоны"
-              }
-          },
-          {
-              "id": "f378eb9e-0211-4ff6-8e35-0ec94bdca117",
-              "dateCreated": "27-ноября-2023",
-              "zayavleno": 3,
-              "prinyato": 33,
-              "pogruzheno": 333,
-              "plusMinusPrinyato": 0,
-              "logs": [],
-              "carriageType": {
-                  "id": 2,
-                  "type": "ХП",
-                  "description": "Хапры"
-              }
-          },
-          {
-              "id": "e8a52982-1419-4a62-9c12-5f00f62fcb5c",
-              "dateCreated": "27-ноября-2023",
-              "zayavleno": 1,
-              "prinyato": 11,
-              "pogruzheno": 111,
-              "plusMinusPrinyato": 0,
-              "logs": [],
-              "carriageType": {
-                  "id": 1,
-                  "type": "ЦС ЦМВ",
-                  "description": "Цестерны цементовозы"
-              }
+        {
+          "id": "97831d9c-266a-4a47-a5c0-9eaec12d8fbc",
+          "dateCreated": "27-11-2023",
+          "zayavleno": 2,
+          "prinyato": 22,
+          "pogruzheno": 222,
+          "plusMinusPrinyato": 0,
+          "logs": [],
+          "carriageType": {
+            "id": 3,
+            "type": "ПВ(инв.)",
+            "description": "Полувагоны"
           }
-      ],
-      "27-11-2023": [
-          {
-              "id": "fe0613c6-f901-4018-bd02-0deb7a38657f",
-              "dateCreated": "26-ноября-2023",
-              "zayavleno": 1,
-              "prinyato": 12,
-              "pogruzheno": 33,
-              "plusMinusPrinyato": 0,
-              "logs": [],
-              "carriageType": {
-                  "id": 1,
-                  "type": "ЦС ЦМВ",
-                  "description": "Цестерны цементовозы"
-              }
-          },
-          {
-              "id": "2cdcbb9f-cc15-47ed-b051-4547d91832e2",
-              "dateCreated": "26-ноября-2023",
-              "zayavleno": 44,
-              "prinyato": 12,
-              "pogruzheno": 33,
-              "plusMinusPrinyato": 0,
-              "logs": [],
-              "carriageType": {
-                  "id": 2,
-                  "type": "ХП",
-                  "description": "Хапры"
-              }
-          },
-          {
-              "id": "a7e8998a-b96a-4907-b870-68494481e244",
-              "dateCreated": "26-ноября-2023",
-              "zayavleno": 65,
-              "prinyato": 12,
-              "pogruzheno": 33,
-              "plusMinusPrinyato": 0,
-              "logs": [],
-              "carriageType": {
-                  "id": 3,
-                  "type": "ПВ(инв.)",
-                  "description": "Полувагоны"
-              }
+        },
+        {
+          "id": "f378eb9e-0211-4ff6-8e35-0ec94bdca117",
+          "dateCreated": "27-11-2023",
+          "zayavleno": 3,
+          "prinyato": 33,
+          "pogruzheno": 333,
+          "plusMinusPrinyato": 0,
+          "logs": [],
+          "carriageType": {
+            "id": 2,
+            "type": "ХП",
+            "description": "Хапры"
           }
-      ]
-    }
+        },
+        {
+          "id": "e8a52982-1419-4a62-9c12-5f00f62fcb5c",
+          "dateCreated": "27-11-2023",
+          "zayavleno": 1,
+          "prinyato": 11,
+          "pogruzheno": 111,
+          "plusMinusPrinyato": 0,
+          "logs": [],
+          "carriageType": {
+            "id": 1,
+            "type": "ЦС ЦМВ",
+            "description": "Цестерны цементовозы"
+          }
+        },
+        {
+          "id": "fe0613c6-f901-4018-bd02-0deb7a38657f",
+          "dateCreated": "26-11-2023",
+          "zayavleno": 1,
+          "prinyato": 12,
+          "pogruzheno": 33,
+          "plusMinusPrinyato": 0,
+          "logs": [],
+          "carriageType": {
+            "id": 1,
+            "type": "ЦС ЦМВ",
+            "description": "Цестерны цементовозы"
+          }
+        },
+        {
+          "id": "2cdcbb9f-cc15-47ed-b051-4547d91832e2",
+          "dateCreated": "26-11-2023",
+          "zayavleno": 44,
+          "prinyato": 12,
+          "pogruzheno": 33,
+          "plusMinusPrinyato": 0,
+          "logs": [],
+          "carriageType": {
+            "id": 2,
+            "type": "ХП",
+            "description": "Хапры"
+          }
+        },
+        {
+          "id": "a7e8998a-b96a-4907-b870-68494481e244",
+          "dateCreated": "26-11-2023",
+          "zayavleno": 65,
+          "prinyato": 12,
+          "pogruzheno": 33,
+          "plusMinusPrinyato": 0,
+          "logs": [],
+          "carriageType": {
+            "id": 3,
+            "type": "ПВ(инв.)",
+            "description": "Полувагоны"
+          }
+        }
   ]
 }

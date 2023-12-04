@@ -7,26 +7,72 @@
       <div class="input-container">
         <mat-form-field appearance="outline">
           <mat-label>Заявлено</mat-label>
-          <input matInput type="text" placeholder="Заявлено" formControlName="zayavleno" (keypress)="keyPressNumbers($event)">
-          <mat-error *ngIf="dolomitForm.get('zayavleno')?.hasError('required')">Поле "Заявлено" обязательно для заполнения</mat-error>
-          <mat-error *ngIf="dolomitForm.get('zayavleno')?.hasError('max')">Поле "Заявлено" должно быть не больше 1000</mat-error>
+          <input matInput type="number" placeholder="Заявлено" formControlName="zayavleno1">
+          <mat-error *ngIf="dolomitForm.get('zayavleno1')?.hasError('required')">Поле "Заявлено" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('zayavleno1')?.hasError('max')">Поле "Заявлено" должно быть не больше 1000</mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Принято</mat-label>
-          <input matInput type="text" placeholder="Принято" formControlName="prinyato" (keypress)="keyPressNumbers($event)">
-          <mat-error *ngIf="dolomitForm.get('prinyato')?.hasError('required')">Поле "Принято" обязательно для заполнения</mat-error>
-          <mat-error *ngIf="dolomitForm.get('prinyato')?.hasError('max')">Поле "Принято" должно быть не больше 1000</mat-error>
+          <input matInput type="number" placeholder="Принято" formControlName="prinyato1">
+          <mat-error *ngIf="dolomitForm.get('prinyato1')?.hasError('required')">Поле "Принято" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('prinyato1')?.hasError('max')">Поле "Принято" должно быть не больше 1000</mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Погружено</mat-label>
-          <input matInput type="text" placeholder="Погружено" formControlName="pogruzheno" (keypress)="keyPressNumbers($event)">
-          <mat-error *ngIf="dolomitForm.get('pogruzheno')?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
-          <mat-error *ngIf="dolomitForm.get('pogruzheno')?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
+          <input matInput type="number" placeholder="Погружено" formControlName="pogruzheno1">
+          <mat-error *ngIf="dolomitForm.get('pogruzheno1')?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('pogruzheno1')?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div mat-dialog-content class="content">
+      <h2 class="text-center">ЦС ЦМВ</h2>
+      <div class="input-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Заявлено</mat-label>
+          <input matInput type="number" placeholder="Заявлено" formControlName="zayavleno2">
+          <mat-error *ngIf="dolomitForm.get('zayavleno2')?.hasError('required')">Поле "Заявлено" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('zayavleno2')?.hasError('max')">Поле "Заявлено" должно быть не больше 1000</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Принято</mat-label>
+          <input matInput type="number" placeholder="Принято" formControlName="prinyato2">
+          <mat-error *ngIf="dolomitForm.get('prinyato2')?.hasError('required')">Поле "Принято" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('prinyato2')?.hasError('max')">Поле "Принято" должно быть не больше 1000</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Погружено</mat-label>
+          <input matInput type="number" placeholder="Погружено" formControlName="pogruzheno2">
+          <mat-error *ngIf="dolomitForm.get('pogruzheno2')?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('pogruzheno2')?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div mat-dialog-content class="content">
+      <h2 class="text-center">ЦС ЦМВ</h2>
+      <div class="input-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Заявлено</mat-label>
+          <input matInput type="number" placeholder="Заявлено" formControlName="zayavleno3">
+          <mat-error *ngIf="dolomitForm.get('zayavleno3')?.hasError('required')">Поле "Заявлено" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('zayavleno3')?.hasError('max')">Поле "Заявлено" должно быть не больше 1000</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Принято</mat-label>
+          <input matInput type="number" placeholder="Принято" formControlName="prinyato3">
+          <mat-error *ngIf="dolomitForm.get('prinyato3')?.hasError('required')">Поле "Принято" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('prinyato3')?.hasError('max')">Поле "Принято" должно быть не больше 1000</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Погружено</mat-label>
+          <input matInput type="number" placeholder="Погружено" formControlName="pogruzheno3">
+          <mat-error *ngIf="dolomitForm.get('pogruzheno3')?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('pogruzheno3')?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
         </mat-form-field>
       </div>
     </div>
     <div mat-dialog-actions class="action">
       <button mat-raised-button type="button">Отмена</button>
-      <button mat-raised-button color="primary" type="submit">{{ originalDolomit?.id ? 'Сохранить' : 'Добавить' }}</button>
+      <button mat-raised-button color="primary" type="submit">Сохранить</button>
     </div>
   </form>

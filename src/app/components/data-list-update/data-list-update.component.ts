@@ -13,21 +13,27 @@ import { DolomitService } from 'src/app/services/dolomit.service';
 })
 export class DataListUpdateComponent {
   dolomitForm: FormGroup;
-  originalDolomit: DataDolomit;
+  originalDolomit: { date: string, carriages: DataDolomit[] };
 
   constructor(
     private _fb: FormBuilder,
     private _dolomitService: DolomitService,
     private _dialogRef: MatDialogRef<DataListUpdateComponent, string>,
     private router: Router,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: DataDolomit
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: { date: string, carriages: DataDolomit[] }
   ) {
     this.originalDolomit = { ...data };
     this.dolomitForm = this._fb.group({
-      id: [data?.id || null],
-      zayavleno: [data?.zayavleno || '', [Validators.required, Validators.max(1000)]],
-      prinyato: [data?.prinyato || '', [Validators.required, Validators.max(1000)]],
-      pogruzheno: [data?.pogruzheno || '', [Validators.required, Validators.max(1000)]]
+      id1: [data.carriages[0].id || null],
+      zayavleno1: [data.carriages[0].zayavleno || '', [Validators.required, Validators.max(1000)]],
+      prinyato1: [data.carriages[0].prinyato || '', [Validators.required, Validators.max(1000)]],
+      pogruzheno1: [data.carriages[0].pogruzheno || '', [Validators.required, Validators.max(1000)]],
+      zayavleno2: [data.carriages[1].zayavleno || '', [Validators.required, Validators.max(1000)]],
+      prinyato2: [data.carriages[1].prinyato || '', [Validators.required, Validators.max(1000)]],
+      pogruzheno2: [data.carriages[1].pogruzheno || '', [Validators.required, Validators.max(1000)]],
+      zayavleno3: [data.carriages[2].zayavleno || '', [Validators.required, Validators.max(1000)]],
+      prinyato3: [data.carriages[2].prinyato || '', [Validators.required, Validators.max(1000)]],
+      pogruzheno3: [data.carriages[2].pogruzheno || '', [Validators.required, Validators.max(1000)]]
     });
   }
   

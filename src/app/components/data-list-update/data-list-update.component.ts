@@ -14,6 +14,7 @@ import { DolomitService } from 'src/app/services/dolomit.service';
 export class DataListUpdateComponent {
   dolomitForm: FormGroup;
   originalDolomit: { date: string, carriages: DataDolomit[] };
+  carriageTypeOrder = ['ЦС ЦМВ', 'ХП', 'ПВ(инв.)'];
 
   constructor(
     private _fb: FormBuilder,
@@ -28,12 +29,15 @@ export class DataListUpdateComponent {
       zayavleno1: [data.carriages[0].zayavleno || '', [Validators.required, Validators.max(1000)]],
       prinyato1: [data.carriages[0].prinyato || '', [Validators.required, Validators.max(1000)]],
       pogruzheno1: [data.carriages[0].pogruzheno || '', [Validators.required, Validators.max(1000)]],
+      type1: [data.carriages[0].carriageType.type|| '', [Validators.required, Validators.max(1000)]],
       zayavleno2: [data.carriages[1].zayavleno || '', [Validators.required, Validators.max(1000)]],
       prinyato2: [data.carriages[1].prinyato || '', [Validators.required, Validators.max(1000)]],
       pogruzheno2: [data.carriages[1].pogruzheno || '', [Validators.required, Validators.max(1000)]],
+      type2: [data.carriages[1].carriageType.type|| '', [Validators.required, Validators.max(1000)]],
       zayavleno3: [data.carriages[2].zayavleno || '', [Validators.required, Validators.max(1000)]],
       prinyato3: [data.carriages[2].prinyato || '', [Validators.required, Validators.max(1000)]],
-      pogruzheno3: [data.carriages[2].pogruzheno || '', [Validators.required, Validators.max(1000)]]
+      pogruzheno3: [data.carriages[2].pogruzheno || '', [Validators.required, Validators.max(1000)]],
+      type3: [data.carriages[2].carriageType.type|| '', [Validators.required, Validators.max(1000)]],
     });
   }
   

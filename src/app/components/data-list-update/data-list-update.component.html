@@ -23,10 +23,16 @@
           <mat-error *ngIf="dolomitForm.get('pogruzheno1')?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
           <mat-error *ngIf="dolomitForm.get('pogruzheno1')?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
         </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Просто тип</mat-label>
+          <input matInput type="text" placeholder="Тип" formControlName="type1">
+          <mat-error *ngIf="dolomitForm.get('type1')?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('type1')?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
+        </mat-form-field>
       </div>
     </div>
     <div mat-dialog-content class="content">
-      <h2 class="text-center">ЦС ЦМВ</h2>
+      <h2 class="text-center">ХП</h2>
       <div class="input-container">
         <mat-form-field appearance="outline">
           <mat-label>Заявлено</mat-label>
@@ -46,10 +52,16 @@
           <mat-error *ngIf="dolomitForm.get('pogruzheno2')?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
           <mat-error *ngIf="dolomitForm.get('pogruzheno2')?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
         </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Просто тип</mat-label>
+          <input matInput type="text" placeholder="Тип" formControlName="type2">
+          <mat-error *ngIf="dolomitForm.get('type2')?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('type2')?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
+        </mat-form-field>
       </div>
     </div>
     <div mat-dialog-content class="content">
-      <h2 class="text-center">ЦС ЦМВ</h2>
+      <h2 class="text-center">ПВ(инв.)</h2>
       <div class="input-container">
         <mat-form-field appearance="outline">
           <mat-label>Заявлено</mat-label>
@@ -68,6 +80,12 @@
           <input matInput type="number" placeholder="Погружено" formControlName="pogruzheno3">
           <mat-error *ngIf="dolomitForm.get('pogruzheno3')?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
           <mat-error *ngIf="dolomitForm.get('pogruzheno3')?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Просто тип</mat-label>
+          <input matInput type="text" placeholder="Тип" formControlName="type3">
+          <mat-error *ngIf="dolomitForm.get('type3')?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('type3')?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
         </mat-form-field>
       </div>
     </div>

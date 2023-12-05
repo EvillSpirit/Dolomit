@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, forkJoin, map } from 'rxjs';
 import { environment } from '../environments/environment.prod';
 import { DataDolomit } from '../interfaces/data-dolomit';
 
@@ -8,8 +8,6 @@ import { DataDolomit } from '../interfaces/data-dolomit';
   providedIn: 'root'
 })
 export class DolomitService {
-
-  private apiUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +17,7 @@ export class DolomitService {
   }
 
   updateDataDolomit(data: DataDolomit): Observable<DataDolomit> {
-    return this.http.patch<DataDolomit>(this.apiUrl + 'dolomit/data/getAllLastMonth', data)
+    return this.http.put<DataDolomit>(`http://localhost:3000/dolomit/${data.id}`, data);
   }
 
 }

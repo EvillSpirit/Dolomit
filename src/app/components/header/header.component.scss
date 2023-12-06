@@ -1,0 +1,47 @@
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.matMenu {
+    z-index: 2;
+}
+
+.custom-menu-item {
+    background-color: #337AB7; /* Яркий розовый фон */
+    color: white; /* Белый текст */
+    padding: 10px 20px; /* Подушечки для кнопок */
+    border-radius: 5px; /* Закругленные углы */
+    font-weight: bold; /* Жирный текст */
+    transition: background-color 0.3s ease; /* Плавный переход цвета */
+    width: 100%;
+}
+  
+.custom-menu-item:hover {
+    background-color: #6495ED; /* Ярко-розовый фон при наведении */
+}
+
+.mat-toolbar.custom-color {
+    background-color: #337AB7; /* Твой собственный цвет */
+    color: rgb(255, 255, 255); /* Цвет текста */
+}
+
+.mat-button.custom-button-color {
+    background-color: #337AB7; /* Твой собственный цвет */
+    color: rgb(255, 255, 255); /* Цвет текста */
+}
+
+.mat-flat-button:hover {
+    background-color: #6495ED; /* Твой собственный цвет */
+}
+
+.custom-icon {
+    filter: invert(100%);
+    margin-left: 10px;
+}

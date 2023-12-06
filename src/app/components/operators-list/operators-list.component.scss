@@ -1,0 +1,100 @@
+.wrapper {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .table-data {
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  .table-data th {
+    font-weight: normal;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 8px;
+    border: 2px solid;
+    font-size: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .table-data td {
+    text-align: center;
+    padding: 8px;
+    border: 2px solid #000000;
+    transition: background-color 0.3s;
+  }
+  
+  .rotate {
+    transform: rotate(-180deg);
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+  }
+  
+  .table-data th:hover {
+    background-color: #ddd;
+  }
+  
+  .table-data tbody tr:hover {
+    background-color: orange;
+  }
+  
+  .custom-button {
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #337AB7;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+
+  .custom-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: invert(100%);
+  }
+  
+  .custom-button:hover {
+    background-color: #2ecc71;
+  }
+  
+  .custom-button-wrapper {
+    text-align: right;
+    margin-top: 20px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .icons-size{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .marg-right{
+    margin-right: 15px;
+  }
+  
+  .body-size{
+    font-size: 20px;
+  }

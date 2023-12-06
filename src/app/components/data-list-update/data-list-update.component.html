@@ -1,0 +1,39 @@
+<div mat-dialog-title class="width"></div>
+<form [formGroup]="dolomitForm" (ngSubmit)="createSubmit()">
+  <h1 class="text-center">Редактирование данных</h1>
+  <ng-container *ngFor="let carriageType of carriageTypeOrder; let i = index">
+    <div mat-dialog-content class="content">
+      <h2 class="text-center">{{ carriageType }}</h2>
+      <div class="input-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Заявлено</mat-label>
+          <input matInput type="number" placeholder="Заявлено" [formControlName]="'zayavleno' + (i + 1)">
+          <mat-error *ngIf="dolomitForm.get('zayavleno' + (i + 1))?.hasError('required')">Поле "Заявлено" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('zayavleno' + (i + 1))?.hasError('max')">Поле "Заявлено" должно быть не больше 1000</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Принято</mat-label>
+          <input matInput type="number" placeholder="Принято" [formControlName]="'prinyato' + (i + 1)">
+          <mat-error *ngIf="dolomitForm.get('prinyato' + (i + 1))?.hasError('required')">Поле "Принято" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('prinyato' + (i + 1))?.hasError('max')">Поле "Принято" должно быть не больше 1000</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Погружено</mat-label>
+          <input matInput type="number" placeholder="Погружено" [formControlName]="'pogruzheno' + (i + 1)">
+          <mat-error *ngIf="dolomitForm.get('pogruzheno' + (i + 1))?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('pogruzheno' + (i + 1))?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Просто тип</mat-label>
+          <input matInput type="text" placeholder="Тип" [formControlName]="'type' + (i + 1)">
+          <mat-error *ngIf="dolomitForm.get('type' + (i + 1))?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="dolomitForm.get('type' + (i + 1))?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </ng-container>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button">Отмена</button>
+    <button mat-raised-button color="primary" type="submit">Сохранить</button>
+  </div>
+</form>

@@ -1,0 +1,49 @@
+<div class="wrapper">
+  <h1 style="font-weight: bold">Обеспечение ОАО Доломит</h1>
+
+  <div class="button-login-wrapper">
+    <a routerLink="login" class="button-login">Войти</a>
+  </div>
+
+  <table class="table-data">
+    <thead>
+      <tr>
+        <th rowspan="2"  style="font-weight: bold">Дата</th>
+        <ng-container *ngFor="let carriageType of carriageTypeOrder">
+          <th colspan="4">{{ carriageType }}</th>
+        </ng-container>
+        <th *ngIf="isAdmin" rowspan="2" style="font-weight: bold">Действие</th>
+      </tr>
+      <tr>
+        <ng-container *ngFor="let carriageType of carriageTypeOrder">
+          <th>Заявлено</th>
+          <th>Принято</th>
+          <th>Погружено</th>
+          <th>+/-<br />Принято</th>
+        </ng-container>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let group of groupedData">
+        <tr>
+          <td>{{ group.date }}</td>
+          <ng-container *ngFor="let carriageType of carriageTypeOrder">
+            <ng-container *ngFor="let item of group.carriages">
+              <ng-container *ngIf="item.carriageType.type === carriageType">
+                <td>{{ item.zayavleno }}</td>
+                <td>{{ item.prinyato }}</td>
+                <td>{{ item.pogruzheno }}</td>
+                <td>{{ item.carriageType.type }}</td>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+          <td>
+            <button>
+              <img class="update-icon" src="assets/icons/edit.png" (click)="openDataListUpdateComponent(group)"/>
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

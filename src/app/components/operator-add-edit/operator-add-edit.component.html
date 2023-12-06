@@ -1,0 +1,43 @@
+<div mat-dialog-title>
+    <h1>{{ data ? 'Редактирование оператора' : 'Добавление нового оператора' }}</h1>
+  </div>
+  <form [formGroup]="operatorForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Имя</mat-label>
+          <input matInput type="text" placeholder="Имя" formControlName="name" [ngModel]="data?.name">
+          <mat-error *ngIf="operatorForm.get('name')?.hasError('required')">Поле "Имя" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="operatorForm.get('name')?.hasError('minlength')">Поле "Имя" должно содержать минимум 5 символов</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Почта</mat-label>
+          <input matInput type="email" placeholder="Почта" formControlName="email" [ngModel]="data?.email">
+          <mat-error *ngIf="operatorForm.get('email')?.hasError('required')">Поле "Почта" обязательно для заполнения</mat-error>
+          <mat-error *ngIf="operatorForm.get('email')?.hasError('email')">Поле "Почта" должно быть валидным адресом электронной почты</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="fill">
+          <mat-label>Роль</mat-label>
+          <mat-select formControlName="role" required [ngModel]="data?.role">
+            <mat-option *ngFor="let val of role" [value]="val">{{ val }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="operatorForm.get('role')?.hasError('required')">Поле "Роль" обязательно для заполнения</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="fill">
+          <mat-label>Статус</mat-label>
+          <mat-select formControlName="status" required [ngModel]="data?.status">
+            <mat-option *ngFor="let val of status" [value]="val">{{ val }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="operatorForm.get('status')?.hasError('required')">Поле "Статус" обязательно для заполнения</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div mat-dialog-actions class="action">
+      <button mat-raised-button (click)="onCancel()">Отмена</button>
+      <button mat-raised-button color="primary" type="submit">{{ data ? 'Сохранить' : 'Добавить' }}</button>
+    </div>
+  </form>

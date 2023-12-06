@@ -1,0 +1,9 @@
+    {"2023-11-15T21:00:00.000+00:00":
+    [{"id":"51e6b384-8ee4-4de0-a3d3-9daeea959a39","dateCreated":"15-ноября-2023","zayavleno":1,"prinyato":12,"pogruzheno":33,"plusMinusPrinyato":0,"logs":[{}],"carriageType":{"id":1,"type":"ЦС ЦМВ","description":"Цестерны цементовозы"}},
+    {"id":"368979c3-eeb6-4b8c-ab82-e2f612f822dc","dateCreated":"15-ноября-2023","zayavleno":44,"prinyato":12,"pogruzheno":33,"plusMinusPrinyato":0,"logs":[],"carriageType":{"id":2,"type":"ХП","description":"Хапры"}},
+    {"id":"520647e3-69c8-4de2-9071-442d03fcd73c","dateCreated":"15-ноября-2023","zayavleno":65,"prinyato":12,"pogruzheno":33,"plusMinusPrinyato":0,"logs":[],"carriageType":{"id":3,"type":"ПВ(инв.)","description":"Полувагоны"}}],
+
+    "2023-11-09T21:00:00.000+00:00":
+    [{"id":"2d56f96b-54f9-45d8-b01f-02337bd3a9c9","dateCreated":"09-ноября-2023","zayavleno":2,"prinyato":13,"pogruzheno":34,"plusMinusPrinyato":3,"logs":[],"carriageType":{"id":1,"type":"ЦС ЦМВ","description":"Цестерны цементовозы"}},
+    {"id":"9e4244b0-5286-463e-8388-4eaf1fb5d61d","dateCreated":"09-ноября-2023","zayavleno":66,"prinyato":15,"pogruzheno":55,"plusMinusPrinyato":5,"logs":[{}],"carriageType":{"id":3,"type":"ПВ(инв.)","description":"Полувагоны"}},
+    {"id":"9f48e65e-3227-4a68-8b96-8882f20db796","dateCreated":"09-ноября-2023","zayavleno":45,"prinyato":14,"pogruzheno":42,"plusMinusPrinyato":2,"logs":[],"carriageType":{"id":2,"type":"ХП","description":"Хапры"}}]}

@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+.button-wrapper {
+  text-align: left;
+}
+
 .table-data {
   margin-top: 10px;
   border-collapse: collapse;
@@ -71,16 +75,40 @@
   font-size: 16px;
   text-decoration: none;
   transition: background-color 0.3s;
-  margin-top: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  margin-left: 100px;
+}
+
+.add-button {
+  width: 200px;
+  text-align: center;
+  display: inline-block;
+  background-color: #337AB7;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 .button-login:hover {
   background-color: #2ecc71;
 }
 
+.add-button:hover {
+  background-color: #2ecc71;
+}
+
 .button-login-wrapper {
   text-align: right;
   margin-top: 20px;
+}
+
+.button-addData-wrapper {
+  text-align: left;
 }
 
 .icons-size{

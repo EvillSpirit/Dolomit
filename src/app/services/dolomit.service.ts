@@ -28,4 +28,15 @@ export class DolomitService {
 
     return forkJoin(updateRequests);
   }
+
+  createdDataDolomit(data: DataDolomit[]): Observable<DataDolomit[]> {
+    const createdRequests = data.map((item) => {
+      return this.http.post<DataDolomit>(
+        `http://localhost:3000/dolomit/`,
+        item
+      );
+    });
+
+    return forkJoin(createdRequests);
+  }
 }

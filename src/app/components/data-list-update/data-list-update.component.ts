@@ -28,35 +28,70 @@ export class DataListUpdateComponent {
     this.originalDolomit = { ...data };
     this.dolomitForm = this._fb.group({});
 
-    for (let i = 0; i < data.carriages.length; i++) {
-      const carriage = data.carriages[i];
-
+    for (let i = 0; i < 3; i++) {
       this.dolomitForm.addControl(
         `id${i + 1}`,
-        this._fb.control(carriage.id || null)
+        this._fb.control(null)
       );
       this.dolomitForm.addControl(
         `zayavleno${i + 1}`,
-        this._fb.control(carriage.zayavleno || '', [
+        this._fb.control('', [
           Validators.required,
           Validators.max(1000),
         ])
       );
       this.dolomitForm.addControl(
         `prinyato${i + 1}`,
-        this._fb.control(carriage.prinyato || '', [
+        this._fb.control('', [
           Validators.required,
           Validators.max(1000),
         ])
       );
       this.dolomitForm.addControl(
         `pogruzheno${i + 1}`,
-        this._fb.control(carriage.pogruzheno || '', [
+        this._fb.control('', [
           Validators.required,
           Validators.max(1000),
         ])
       );
       this.dolomitForm.addControl(
+        `type${i + 1}`,
+        this._fb.control('', [
+          Validators.required,
+          Validators.max(1000),
+        ])
+      );
+    }
+
+    for (let i = 0; i < data?.carriages?.length; i++) {
+      const carriage = data.carriages[i];
+
+      this.dolomitForm.setControl(
+        `id${i + 1}`,
+        this._fb.control(carriage.id || null)
+      );
+      this.dolomitForm.setControl(
+        `zayavleno${i + 1}`,
+        this._fb.control(carriage.zayavleno || '', [
+          Validators.required,
+          Validators.max(1000),
+        ])
+      );
+      this.dolomitForm.setControl(
+        `prinyato${i + 1}`,
+        this._fb.control(carriage.prinyato || '', [
+          Validators.required,
+          Validators.max(1000),
+        ])
+      );
+      this.dolomitForm.setControl(
+        `pogruzheno${i + 1}`,
+        this._fb.control(carriage.pogruzheno || '', [
+          Validators.required,
+          Validators.max(1000),
+        ])
+      );
+      this.dolomitForm.setControl(
         `type${i + 1}`,
         this._fb.control(carriage.carriageType?.type || '', [
           Validators.required,
@@ -68,7 +103,7 @@ export class DataListUpdateComponent {
     this.isEditMode = !!data?.carriages;
   }
 
-  createSubmit() {
+  updateSubmit() {
     if (this.dolomitForm.valid) {
       const formData = this.dolomitForm.value;
       const updatedData: DataDolomit[] = [];
@@ -94,6 +129,44 @@ export class DataListUpdateComponent {
       }
 
       this._dolomitService.updateDataDolomit(updatedData).subscribe({
+        next: (val: DataDolomit[]) => {
+          location.reload();
+          alert('Update Success');
+          this._dialogRef.close('Update Success');
+        },
+        error: (err: any) => {
+          console.error(err);
+        },
+      });
+    }
+  }
+
+  createSubmit() {
+    if (this.dolomitForm.valid) {
+      const formData = this.dolomitForm.value;
+      const updatedData: DataDolomit[] = [];
+
+      for (let i = 0; i < 3; i++) {
+        let prinyato = formData[`prinyato${i + 1}`];
+        let pogruzheno = formData[`pogruzheno${i + 1}`];
+        let zayavleno = formData[`zayavleno${i + 1}`];
+
+        updatedData.push({
+          id: Math.random().toString(),
+          dateCreated: (new Date()).toDateString(),
+          plusMinusPrinyato: prinyato - pogruzheno,
+          zayavleno: zayavleno,
+          prinyato: prinyato,
+          pogruzheno: pogruzheno,
+          carriageType: {
+            type: this.carriageTypeOrder[i],
+            id: i,
+            description: "",
+          },
+        });
+      }
+
+      this._dolomitService.createdDataDolomit(updatedData).subscribe({
         next: (val: DataDolomit[]) => {
           location.reload();
           alert('Update Success');

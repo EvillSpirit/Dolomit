@@ -1,5 +1,5 @@
 <div mat-dialog-title class="width"></div>
-<form [formGroup]="dolomitForm" (ngSubmit)="createSubmit()">
+<form [formGroup]="dolomitForm" (ngSubmit)="data ? updateSubmit() : createSubmit()">
   <h1 class="text-center">{{ data ? 'Редактирование' : 'Добавление' }}</h1>
   <ng-container *ngFor="let carriageType of carriageTypeOrder; let i = index">
     <div mat-dialog-content class="content">

@@ -98,7 +98,7 @@
       "id": "3213210809d9c-266a-4a47-a5c0-9eaec12d8fbsa",
       "dateCreated": "29-11-2023",
       "plusMinusPrinyato": 0,
-      "zayavleno": 222,
+      "zayavleno": 666,
       "prinyato": 123,
       "pogruzheno": 123,
       "carriageType": {
@@ -131,6 +131,97 @@
         "type": "ПВ(инв.)",
         "id": 3,
         "description": "Полувагоны"
+      }
+    },
+    {
+      "id": "0",
+      "dateCreated": "1702056793324",
+      "plusMinusPrinyato": 0,
+      "zayavleno": 1,
+      "prinyato": 1,
+      "pogruzheno": 1,
+      "carriageType": {
+        "type": "ЦС ЦМВ",
+        "id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": "0.746342910977521",
+      "dateCreated": "1702056856531",
+      "plusMinusPrinyato": 0,
+      "zayavleno": 1,
+      "prinyato": 1,
+      "pogruzheno": 1,
+      "carriageType": {
+        "type": "ПВ(инв.)",
+        "id": 2,
+        "description": ""
+      }
+    },
+    {
+      "id": "0.5412180677052616",
+      "dateCreated": "1702056856531",
+      "plusMinusPrinyato": 0,
+      "zayavleno": 1,
+      "prinyato": 1,
+      "pogruzheno": 1,
+      "carriageType": {
+        "type": "ЦС ЦМВ",
+        "id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": "0.1582449164794233",
+      "dateCreated": "1702056856531",
+      "plusMinusPrinyato": 0,
+      "zayavleno": 1,
+      "prinyato": 1,
+      "pogruzheno": 1,
+      "carriageType": {
+        "type": "ХП",
+        "id": 1,
+        "description": ""
+      }
+    },
+    {
+      "id": "0.1070818229267112",
+      "dateCreated": "Fri Dec 08 2023",
+      "plusMinusPrinyato": 0,
+      "zayavleno": 2,
+      "prinyato": 2,
+      "pogruzheno": 2,
+      "carriageType": {
+        "type": "ЦС ЦМВ",
+        "id": 0,
+        "description": ""
+      }
+    },
+    {
+      "id": "0.25938621904214654",
+      "dateCreated": "Fri Dec 08 2023",
+      "plusMinusPrinyato": 0,
+      "zayavleno": 2,
+      "prinyato": 2,
+      "pogruzheno": 2,
+      "carriageType": {
+        "type": "ХП",
+        "id": 1,
+        "description": ""
+      }
+    },
+    {
+      "id": "0.03423110479689084",
+      "dateCreated": "Fri Dec 08 2023",
+      "plusMinusPrinyato": 0,
+      "zayavleno": 2,
+      "prinyato": 2,
+      "pogruzheno": 2,
+      "carriageType": {
+        "type": "ПВ(инв.)",
+        "id": 2,
+        "description": ""
       }
     }
   ]

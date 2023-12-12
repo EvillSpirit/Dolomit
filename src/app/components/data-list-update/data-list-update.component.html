@@ -23,17 +23,11 @@
           <mat-error *ngIf="dolomitForm.get('pogruzheno' + (i + 1))?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
           <mat-error *ngIf="dolomitForm.get('pogruzheno' + (i + 1))?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
         </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>Просто тип</mat-label>
-          <input matInput type="text" placeholder="Тип" [formControlName]="'type' + (i + 1)">
-          <mat-error *ngIf="dolomitForm.get('type' + (i + 1))?.hasError('required')">Поле "Погружено" обязательно для заполнения</mat-error>
-          <mat-error *ngIf="dolomitForm.get('type' + (i + 1))?.hasError('max')">Поле "Погружено" должно быть не больше 1000</mat-error>
-        </mat-form-field>
       </div>
     </div>
   </ng-container>
   <div mat-dialog-actions class="action">
-    <button mat-raised-button type="button">Отмена</button>
+    <button mat-raised-button type="button" (click)="onCancel()">Отмена</button>
     <button mat-raised-button color="primary" type="submit">{{ data ? 'Обновить' : 'Создать' }}</button>
   </div>
 </form>

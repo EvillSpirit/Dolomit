@@ -3,7 +3,6 @@
 
   <div class="button-wrapper">
     <button class="add-button" (click)="openDataListUpdateComponent()">Добавить запись</button>
-    <a routerLink="login" class="button-login">Войти</a>
   </div>
 
   <table class="table-data">
@@ -34,7 +33,7 @@
                 <td>{{ item.zayavleno }}</td>
                 <td>{{ item.prinyato }}</td>
                 <td>{{ item.pogruzheno }}</td>
-                <td>{{ item.carriageType.type }}</td>
+                <td>{{ item.plusMinusPrinyato }}</td>
               </ng-container>
             </ng-container>
           </ng-container>

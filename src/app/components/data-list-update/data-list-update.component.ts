@@ -5,6 +5,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DataDolomit } from 'src/app/interfaces/data-dolomit';
 import { DolomitService } from 'src/app/services/dolomit.service';
 
+
+
 @Component({
   selector: 'app-data-list-update',
   templateUrl: './data-list-update.component.html',
@@ -19,6 +21,7 @@ export class DataListUpdateComponent {
   constructor(
     private _fb: FormBuilder,
     private _dolomitService: DolomitService,
+    private dialogRef: MatDialogRef<DataListUpdateComponent>,
     private _dialogRef: MatDialogRef<DataListUpdateComponent, string>,
     private router: Router,
     @Optional()
@@ -49,13 +52,6 @@ export class DataListUpdateComponent {
       );
       this.dolomitForm.addControl(
         `pogruzheno${i + 1}`,
-        this._fb.control('', [
-          Validators.required,
-          Validators.max(1000),
-        ])
-      );
-      this.dolomitForm.addControl(
-        `type${i + 1}`,
         this._fb.control('', [
           Validators.required,
           Validators.max(1000),
@@ -153,17 +149,29 @@ export class DataListUpdateComponent {
 
         updatedData.push({
           id: Math.random().toString(),
-          dateCreated: (new Date()).toDateString(),
+          dateCreated: new Date().toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\./g, '-'),
           plusMinusPrinyato: prinyato - pogruzheno,
           zayavleno: zayavleno,
           prinyato: prinyato,
           pogruzheno: pogruzheno,
           carriageType: {
             type: this.carriageTypeOrder[i],
-            id: i,
-            description: "",
+            id: i + 1,
+            description: getDescriptionByIndex(i + 1),
           },
         });
+
+        function getDescriptionByIndex(index: number): string {
+          if (index === 1) {
+            return "Цестерны цементовозы";
+          } else if (index === 2) {
+            return "Хапры";
+          } else if (index === 3) {
+            return "Полувагоны";
+          } else {
+            return "";
+          }
+        }
       }
 
       this._dolomitService.createdDataDolomit(updatedData).subscribe({
@@ -177,6 +185,10 @@ export class DataListUpdateComponent {
         },
       });
     }
+  }
+
+  onCancel() {
+    this.dialogRef.close();
   }
 
   title = 'angular-key-press-example';

@@ -18,6 +18,7 @@ export class DataListUpdateComponent {
   carriageTypeOrder = ['ЦС ЦМВ', 'ХП', 'ПВ(инв.)'];
   isEditMode: boolean = false;
 
+
   constructor(
     private _fb: FormBuilder,
     private _dolomitService: DolomitService,
@@ -27,7 +28,17 @@ export class DataListUpdateComponent {
     @Optional()
     @Inject(MAT_DIALOG_DATA)
     public data: { date: string; carriages: DataDolomit[] }
+
+    
   ) {
+    if (data?.carriages) {
+      data.carriages.sort((a, b) => {
+        const typeA = a.carriageType.type;
+        const typeB = b.carriageType.type;
+        return this.carriageTypeOrder.indexOf(typeA) - this.carriageTypeOrder.indexOf(typeB);
+      });
+    }
+
     this.originalDolomit = { ...data };
     this.dolomitForm = this._fb.group({});
 
@@ -142,7 +153,7 @@ export class DataListUpdateComponent {
       const formData = this.dolomitForm.value;
       const updatedData: DataDolomit[] = [];
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < this.data?.carriages?.length; i++) {
         let prinyato = formData[`prinyato${i + 1}`];
         let pogruzheno = formData[`pogruzheno${i + 1}`];
         let zayavleno = formData[`zayavleno${i + 1}`];
